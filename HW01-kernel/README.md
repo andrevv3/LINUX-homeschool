@@ -21,13 +21,10 @@ rm -f linux-4.20.tar.xz
 `cp -v /boot/config-3.10.0-1062.12.1.el7.x86_64 /usr/src/linux-4.20/.config`
 
 выполняем конфигурирование ядра (make oldconfig использовать конф. старого ядра, make oldconfig создать конф по умолчанию)
-```
-cd /usr/src/linux-4.20/
-make menuconfig
-```
+`cd /usr/src/linux-4.20/ && make menuconfig`
 
 запускаем сборку (-j 4 кол-во потоков)
 `make -j 4`
 
 выполняем установку (файл будет помещён  каталог в /boot, и внесены изменения в /boot/grub/grub.conf)
-`make install modules_install`
+`make install && make modules_install`
