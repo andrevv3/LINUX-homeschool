@@ -28,3 +28,12 @@ rm -f linux-4.20.tar.xz
 
 выполняем установку (файл будет помещён  каталог в /boot, и внесены изменения в /boot/grub/grub.conf)
 `make install && make modules_install`
+
+проверяем установку
+`ls -l /boot/ | tail -n 3`
+
+перезагрузка системы
+`shutdown -r now`
+
+проверяем
+`uname -r`
